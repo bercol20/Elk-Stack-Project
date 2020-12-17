@@ -67,13 +67,16 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because... only ansible public key can be used
 - _TODO: What is the main advantage of automating configuration with Ansible?_
+The main avanatage of Ansible is to automate away drudgery from daily tasks.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ... 
-- ...
+- ... Install docker python module
+- ... Download filebeat using CURL command
+      Enable and configure system module
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
@@ -84,20 +87,23 @@ Web1: 10.0.0.4    and Web2: 10.0.0.5
 We have installed the following Beats on these machines:
 - _TODO: Specify which Beats you successfully installed_
 
-  Filebeat
+  Filebeat 
   Metribeat
 
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._Filebeat detects changes to the filesystem
+- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+
+Filebeat detects changes to the filesystem. Especialy we use it to collect Apache logs.
+Metricbeat detects changes in system, such as CPU usage. We use it to generate a trace of all atcitity that takes place on the nework.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Copy the playbook file to Ansible control Node.
+- Update the playbook configuration file to include the IP Address
+- Run the playbook, and navigate to check data to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
