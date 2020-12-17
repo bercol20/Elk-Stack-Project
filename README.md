@@ -62,7 +62,7 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box |     Yes             | 10.0.0.4             |
 | DVWA1    |     No              | 10.0.0.5             |
 | DVWA2    |     No              | 10.0.0.6             |
-  Elk            No                10.1.0.4
+ 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because... only ansible public key can be used
