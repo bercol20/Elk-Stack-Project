@@ -8,7 +8,7 @@ The files in this repository were used to configure the network depicted below.
 
 
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ______ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
   - _TODO: Enter the playbook file._ 
 
@@ -28,7 +28,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. The load balancer ensures that work to process incoming traffic will be shared by both vulnerable web servers. Access control will ensure that only authorized users, namely, ourselves, will be able to connect in the first place.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 Load balancer defends an organization against DDoS.
-Jam box is a source connector from where we can connect to other servers.
+Jum box is a source connector from where we can connect to other servers.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems of the VMs on the network and system metrics.
 - _TODO: What does Filebeat watch for?_ Filebeat detects changes to the filesystem. Especialy we use it to collect Apache logs.
@@ -62,19 +62,20 @@ A summary of the access policies in place can be found in the table below.
 | Jump Box |     Yes             | 10.0.0.4             |
 | DVWA1    |     No              | 10.0.0.5             |
 | DVWA2    |     No              | 10.0.0.6             |
- 
+| Elk      |     No              | 10.1.0.4             |
+
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because... only ansible public key can be used
 - _TODO: What is the main advantage of automating configuration with Ansible?_
-The main avanatage of Ansible is to automate away drudgery from daily tasks.
+The main avanatage of Ansible is to automate away drudgery from daily tasks while reducing or elimination human error
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ... Install docker python module
 - ... Download filebeat using CURL command
       Enable and configure system module
-
+      Install docker.io
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 
