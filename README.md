@@ -27,13 +27,13 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. The load balancer ensures that work to process incoming traffic will be shared by both vulnerable web servers. Access control will ensure that only authorized users, namely, ourselves, will be able to connect in the first place.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-Load balancer defends an organization against DDoS.
-Jum box is a source connector from where we can connect to other servers.
+In addition to managing traffic flows accross enterprise routers and servers, Load balancer defends an organization against DDoS by shifting attack trafic from the corporate server to a public cloud provider.
+Jum box is a source connector from where we can connect to other servers; Web1 and Web2 in our case. In order to access Web1 and Web2 servers, a client need to first acces a Jump Box which is a security layer.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems of the VMs on the network and system metrics.
-- _TODO: What does Filebeat watch for?_ Filebeat detects changes to the filesystem. Especialy we use it to collect Apache logs.
+- _TODO: What does Filebeat watch for?_ Filebeat detects changes to the filesystem; especialy we use it to collect Apache logs.
 
-- _TODO: What does Metricbeat record?_ Metricbeat detects changes in system, such as CPU usage. We use it to generate a trace of all atcitity that takes place on the nework.
+- _TODO: What does Metricbeat record?_ Metricbeat detects changes in system, such as CPU usage; we use it to generate a trace of all atcitity that takes place on the nework.
 
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
@@ -68,14 +68,15 @@ A summary of the access policies in place can be found in the table below.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because... only ansible public key can be used
 - _TODO: What is the main advantage of automating configuration with Ansible?_
-The main avanatage of Ansible is to automate away drudgery from daily tasks while reducing or elimination human error
+The main avanatage of Ansible is to automate away drudgery from daily tasks while reducing or elimination human error.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - ... Install docker python module
 - ... Download filebeat using CURL command
-      Enable and configure system module
-      Install docker.io
+- ... Enable and configure system module
+-.... Install docker.io and pip3
+
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 
@@ -95,7 +96,7 @@ We have installed the following Beats on these machines:
 These Beats allow us to collect the following information from each machine:
 - _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
 
-Filebeat detects changes to the filesystem. Especialy we use it to collect Apache logs.
+Filebeat detects changes to the filesystem and is especialy used to collect Apache logs.
 Metricbeat detects changes in system, such as CPU usage. We use it to generate a trace of all atcitity that takes place on the nework.
 
 ### Using the Playbook
