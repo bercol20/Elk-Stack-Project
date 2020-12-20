@@ -103,17 +103,22 @@ Metricbeat detects changes in system, such as CPU usage. We use it to generate a
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
+
 - Copy the playbook file to Ansible control Node.
 - Update the playbook configuration file to include the IP Address
 - Run the playbook, and navigate to check data to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
+
 Playbook is the file where Ansible code is written and contain the steps which the user wants to execute on a particular machine. Playbooks are written in YAML(Yet Another Markup Language.
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_1
+
 playbook-config.yml
+This configuration file is edithed and the hostsis paired with the pirivate ip address.
+
 - _Which URL do you navigate to in order to check that the ELK server is running?
 
-www.Kibana.com
+ip:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
